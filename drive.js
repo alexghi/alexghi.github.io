@@ -1,6 +1,6 @@
 function onAddFilesFromGdriveBtnClick( el ) {
 	var me = this,
-		developerKey = 'AIzaSyCsGnDhkP3RkiKnAS558FnqPzvZiatM8LE',
+		developerKey = '', // replace these configs with the ones you have ( you have to have google picker api and google drive api enabled )
 		clientId = '261841290699-p7vdsgdulv56r9ck7mhnu1lk606uvn22.apps.googleusercontent.com',
 		appId = '-LOb1myPgzI78gBshu1Iw6VL',
 		scope = ['https://www.googleapis.com/auth/drive'],
