@@ -62,7 +62,7 @@ function onAddFilesFromGdriveBtnClick( el ) {
 			}
 		};
 
-	this.loadScript( 'https://apis.google.com/js/api.js', onLoad());
+	this.loadScript( 'https://apis.google.com/js/api.js', onLoad );
 	function onLoad() {
 		gapi.load( 'auth2', {'callback': onAuthApiLoad} );
 		gapi.load( 'picker', {'callback': onPickerApiLoad} );
@@ -70,7 +70,7 @@ function onAddFilesFromGdriveBtnClick( el ) {
 }
 
 function loadScript(sScriptSrc, oCallback) {
-	var oHead = document.getElementById('head')[0];
+	var oHead = document.getElementsByTagName("head")[0] || document.documentElement;
 	var oScript = document.createElement('script');
 	oScript.type = 'text/javascript';
 	oScript.src = sScriptSrc;
@@ -82,5 +82,5 @@ function loadScript(sScriptSrc, oCallback) {
 			oCallback();
 		}
 	};
-	oHead.appendChild(oScript);
+	oHead.insertBefore( oScript, oHead.firstChild );
 }
