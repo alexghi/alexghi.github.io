@@ -27,10 +27,8 @@ function onAddFilesFromGdriveBtnClick( el ) {
 		},
 		createPicker = function() {
 			var picker,
-				view,
-				uploadView;
+				view;
 
-			// creeam pickerul daca picker api e loaded si avem oauthToken
 			if( pickerApiLoaded && oauthToken ) {
 				view = new google.picker.DocsView().setIncludeFolders( true );
 				view.setParent( 'root' );
@@ -55,7 +53,6 @@ function onAddFilesFromGdriveBtnClick( el ) {
 			picker.setVisible( true );
 		},
 		pickerCallback = function( data ) {
-			var pickedItems;
 			if( data.action === google.picker.Action.PICKED ) {
 				alert( google.picker.Action.PICKED );
 				// do something
@@ -74,9 +71,7 @@ function loadScript(sScriptSrc, oCallback) {
 	var oScript = document.createElement('script');
 	oScript.type = 'text/javascript';
 	oScript.src = sScriptSrc;
-// most browsers
 	oScript.onload = oCallback;
-// IE 6 & 7
 	oScript.onreadystatechange = function() {
 		if (this.readyState == 'complete') {
 			oCallback();
